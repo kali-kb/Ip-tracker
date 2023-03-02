@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --very-dark-gray: hsl(0, 0%, 17%);
+  --dark-gray: hsl(0, 0%, 59%);
+  --family: 'Rubik', sans-serif;
+}
+
+
+body {
+  font-family: var(--family);
+}
+
+
+.grid {
+  /*grid-template-rows: repeat(2, 12fr);*/
+  grid-template-rows: 16rem;
+}
+
+.grid:first-child {
+  display: grid;
+  background: url('assets/pattern-bg-desktop.png');
+    /*background-size: cover;*/
+  background-position: center;
+}
+
+.grid:first-child > div {
+  margin-bottom: 20px;
+}
+
+
+#data-input {
+  display: flex;
+  width: 30rem;
+  flex-direction: column;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#data-input > h1 {
+  color: white;
+}
+
+form {
+  display: flex;
+}
+
+button {
+  border: none;
+  /*color: white;*/
+  background-color: black;
+  fill: white;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+button:hover {
+  background-color: #262626;
+}
+
+
+
+button > svg {
+  padding: 12px;
+}
+
+input {
+  width: 100%;
+  border: none;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+input::placeholder {
+  font-family: var(--family);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#geo-data {
+  margin-top: 3rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  position: relative;
+  background-color: white;
+  justify-content: space-around;
+  z-index: 999;
+}
+
+
+
+#geo-data > div {
+  margin: 25px;
+}
+
+
+
+#geo-data > div > span {
+  color: gray;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+#geo-data > div > p {
+  font-size: clamp(12px, 2vw, 30px);
+}
+
+#map-container {
+  background-clip: content-box;
+  display: grid;
+  position: relative;
+  height: 100%;
+}
+
+
+#map-container > * {
+  position: relative;
+  height: 700px;
+  top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  #geo-data {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  #data-input {
+    width: 80%;
+  }
+
+  .grid:first-child {
+    background: url('assets/pattern-bg-mobile.png');
+  }
+
+  .grid:first-child > div {
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  #geo-data > div {
+    margin: 10px;
+  }
+
+  #map-container {
+    height: 40rem;
+  }
+
+}
